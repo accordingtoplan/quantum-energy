@@ -10,13 +10,14 @@ A web prototype (homepage + one PDP) to convince Quantum Energy Square (client c
 - docs/Quantum_PDP_Spec_v1.md: full PDP block-by-block (13 blocks), v1.1 decisions locked at the bottom.
 
 ## Locked decisions
-- Design system: Quantum yellow (#FFD400) dominant, black ink, hard borders, offset shadows. Type placeholder: Archivo / Archivo Expanded (swap for brand font later). Rhode calm as default, David-style repeated argument (exactly 3x on PDP, 2x on homepage), energy from type and color, not density.
+- Design system v2 (Frederik, Jul 15): warm neutral paper background (#F4F2EC), never yellow as background. Yellow (#FFD400) as the dominant color through elements: pack, highlights, stat underlines, CTA text, accents. No brown anywhere. Hairline borders and soft shadows, not hard borders or offset shadows. Direction: Rhode and David having a talented kid, Rhode calm and refinement with David-bold uppercase type. Type placeholder: Archivo / Archivo Expanded. Repeated argument stays (3x PDP, 2x homepage).
 - Prototype flavor: Peanut Butter Dark Chocolate ($19.95 8-pack, live copy pulled from quantumsquares.com PDP).
 - Flavor takeover: each flavor takes over the PDP stage; yellow owns homepage and nav.
 - Energy curve: scroll-driven (curve draws on scroll, crash line falls, Quantum line holds). Signature module, shared between homepage and PDP.
 - Moment selector: interactive tabs. Pricing: placeholders until Katie Lee.
 - Hero: static image for v1. Product cutout still a placeholder graphic, needs real packshot.
-- Never use em-dashes in any copy.
+- Headline locked (Frederik, Jul 15): "Real energy for days and nights." Switcher removed.
+- Never use em-dashes in any copy. NEVER. Applies to all files, commits, and UI text.
 
 ## Deploy protocol (per Frederik)
 GitHub REST API, not git CLI. Verify connection, check Pages status (enable on default branch root if 404), always fetch live file + fresh SHA before PUT, surgical string replacements only, show diff and wait for explicit go before every push, one concern per commit.
