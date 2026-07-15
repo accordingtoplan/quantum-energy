@@ -139,21 +139,6 @@
     .stage{flex:1;margin-top:0;align-self:stretch}
   }
 
-  /* ---------- variant switch ---------- */
-  .switcher{
-    position:fixed;bottom:18px;right:18px;z-index:100;
-    background:var(--ink);color:var(--paper);
-    font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-    padding:12px 18px;border:2px solid var(--paper);cursor:pointer;
-    box-shadow:0 6px 20px rgba(0,0,0,.3);
-  }
-  .v-b .headline-a{display:none}
-  .headline-b{display:none}
-  .v-b .headline-b{display:block}
-  .v-b .sub-a{display:none}
-  .sub-b{display:none}
-  .v-b .sub-b{block-size:auto;display:block}
-
   @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
   @keyframes pop{from{opacity:0;transform:rotate(-10deg) translateY(30%) scale(.9)}to{opacity:1;transform:rotate(-4deg) translateY(14%) scale(1)}}
   @media(prefers-reduced-motion:reduce){
@@ -179,13 +164,9 @@
     <div class="copy">
       <div class="eyebrow">The Caffeinated Energy Bar</div>
 
-      <!-- Variant A: outcome-led -->
-      <h1 class="headline-a">Steady energy for <span class="flip">unsteady</span> days.</h1>
-      <!-- Variant B: caffeine-forward -->
-      <h1 class="headline-b">Real caffeine. Real food. <span class="flip">Real</span> energy.</h1>
+      <h1>Real energy for days <span class="flip">and nights</span>.</h1>
 
-      <p class="sub sub-a">The energy bar with <b>100mg clean caffeine</b> + <b>10g protein</b>. No spike, no crash.</p>
-      <p class="sub sub-b">Clean caffeine from organic green coffee, paired with real food. <b>No spike, no crash.</b></p>
+      <p class="sub">The energy bar with <b>100mg clean caffeine</b> + <b>10g protein</b>. No spike, no crash.</p>
 
       <div class="ctas">
         <a class="btn primary" href="#">Shop Flavors</a>
@@ -208,8 +189,6 @@
     <div><b>0</b>crash</div>
   </div>
 </section>
-
-<button class="switcher" onclick="document.body.classList.toggle('v-b');this.textContent=document.body.classList.contains('v-b')?'View A: Outcome':'View B: Caffeine'">View B: Caffeine</button>
 
 </body>
 </html>
