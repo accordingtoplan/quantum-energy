@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum — Hero Prototype v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=Archivo+Expanded:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow:#FFD400;
+    --yellow-deep:#F5C400;
+    --ink:#101010;
+    --paper:#FFFDF5;
+    --choc:#3B2416;
+    --peanut:#C98A3B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Archivo',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- announcement + nav ---------- */
+  .bar{
+    background:var(--ink);color:var(--yellow);
+    font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    text-align:center;padding:9px 16px;font-weight:600;
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 20px;background:var(--yellow);
+    border-bottom:2px solid var(--ink);
+    position:sticky;top:0;z-index:50;
+  }
+  .logo{
+    font-family:'Archivo Expanded',sans-serif;font-weight:900;
+    font-size:17px;letter-spacing:-.01em;text-transform:uppercase;
+  }
+  .logo span{display:inline-block;width:12px;height:12px;background:var(--ink);margin-right:8px;transform:rotate(0deg)}
+  .nav-links{display:none;gap:28px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+  .nav-links a{color:var(--ink);text-decoration:none}
+  .cart{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+  @media(min-width:760px){.nav-links{display:flex}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--yellow);
+    position:relative;overflow:hidden;
+    padding:56px 20px 0;
+    min-height:calc(100svh - 100px);
+    display:flex;flex-direction:column;
+  }
+  .hero-inner{max-width:1200px;margin:0 auto;width:100%;flex:1;display:flex;flex-direction:column}
+
+  .eyebrow{
+    font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    margin-bottom:20px;display:flex;align-items:center;gap:10px;
+    opacity:0;animation:rise .7s ease .1s forwards;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--ink)}
+
+  h1{
+    font-family:'Archivo Expanded',sans-serif;
+    font-weight:900;text-transform:uppercase;
+    font-size:clamp(44px,9.5vw,118px);
+    line-height:.94;letter-spacing:-.02em;
+    max-width:11ch;
+    opacity:0;animation:rise .7s ease .25s forwards;
+  }
+  h1 .flip{color:var(--paper);
+    text-shadow:2px 2px 0 var(--ink), -1px -1px 0 var(--ink),1px -1px 0 var(--ink),-1px 1px 0 var(--ink);
+  }
+
+  .sub{
+    margin-top:22px;font-size:clamp(15px,1.6vw,19px);line-height:1.5;
+    max-width:44ch;font-weight:500;
+    opacity:0;animation:rise .7s ease .4s forwards;
+  }
+  .sub b{font-weight:600;border-bottom:2px solid var(--ink)}
+
+  .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;
+    opacity:0;animation:rise .7s ease .55s forwards;}
+  .btn{
+    font-family:'Archivo',sans-serif;font-size:14px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.08em;text-decoration:none;
+    padding:16px 28px;border:2px solid var(--ink);cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn.primary{background:var(--ink);color:var(--yellow)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+  .btn.primary:hover{box-shadow:4px 4px 0 rgba(16,16,16,.35)}
+
+  /* product stage */
+  .stage{
+    position:relative;margin-top:36px;flex:1;min-height:300px;
+    display:flex;align-items:flex-end;justify-content:center;
+  }
+  .square{
+    width:min(64vw,380px);aspect-ratio:1/1;
+    background:linear-gradient(145deg,var(--choc) 0%, #2A1810 70%);
+    border:3px solid var(--ink);
+    box-shadow:10px 10px 0 var(--ink);
+    transform:rotate(-4deg) translateY(14%);
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:7%;color:var(--yellow);
+    opacity:0;animation:pop .8s cubic-bezier(.2,.9,.3,1.2) .5s forwards;
+    position:relative;
+  }
+  .square::after{
+    content:"REPLACE WITH PRODUCT CUTOUT";
+    position:absolute;inset:auto 8px 8px auto;font-size:9px;letter-spacing:.1em;
+    color:rgba(255,212,0,.5);
+  }
+  .square .flavor{
+    font-family:'Archivo Expanded',sans-serif;font-weight:800;text-transform:uppercase;
+    font-size:clamp(15px,2.4vw,24px);line-height:1.05;letter-spacing:-.01em;
+  }
+  .square .marks{display:flex;justify-content:space-between;align-items:flex-end;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .square .bolt{font-size:clamp(40px,7vw,72px);line-height:1}
+
+  .numbers{
+    position:absolute;left:0;bottom:22px;
+    display:flex;flex-direction:column;gap:6px;
+    font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    opacity:0;animation:rise .7s ease .8s forwards;
+  }
+  .numbers div b{font-family:'Archivo Expanded';font-size:20px;display:block;letter-spacing:0}
+  @media(max-width:759px){.numbers{position:static;flex-direction:row;gap:22px;margin-top:26px;justify-content:center;padding-bottom:8px}}
+
+  @media(min-width:760px){
+    .hero{padding-top:72px}
+    .hero-inner{flex-direction:row;align-items:center;gap:40px}
+    .copy{flex:1.15}
+    .stage{flex:1;margin-top:0;align-self:stretch}
+  }
+
+  /* ---------- variant switch ---------- */
+  .switcher{
+    position:fixed;bottom:18px;right:18px;z-index:100;
+    background:var(--ink);color:var(--paper);
+    font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    padding:12px 18px;border:2px solid var(--paper);cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.3);
+  }
+  .v-b .headline-a{display:none}
+  .headline-b{display:none}
+  .v-b .headline-b{display:block}
+  .v-b .sub-a{display:none}
+  .sub-b{display:none}
+  .v-b .sub-b{block-size:auto;display:block}
+
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pop{from{opacity:0;transform:rotate(-10deg) translateY(30%) scale(.9)}to{opacity:1;transform:rotate(-4deg) translateY(14%) scale(1)}}
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none !important;opacity:1 !important;transform:none !important}
+    .square{transform:rotate(-4deg)}
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">Subscribe &amp; Save 10% &nbsp;⚡&nbsp; Free shipping over $35</div>
+
+<nav>
+  <div class="logo"><span></span>Quantum</div>
+  <div class="nav-links">
+    <a href="#">Shop</a><a href="#">Subscribe</a><a href="#">Our Mission</a><a href="#">Store Locator</a>
+  </div>
+  <div class="cart">Cart (0)</div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="copy">
+      <div class="eyebrow">The Caffeinated Energy Bar</div>
+
+      <!-- Variant A: outcome-led -->
+      <h1 class="headline-a">Steady energy for <span class="flip">unsteady</span> days.</h1>
+      <!-- Variant B: caffeine-forward -->
+      <h1 class="headline-b">Real caffeine. Real food. <span class="flip">Real</span> energy.</h1>
+
+      <p class="sub sub-a">The energy bar with <b>100mg clean caffeine</b> + <b>10g protein</b>. No spike, no crash.</p>
+      <p class="sub sub-b">Clean caffeine from organic green coffee, paired with real food. <b>No spike, no crash.</b></p>
+
+      <div class="ctas">
+        <a class="btn primary" href="#">Shop Flavors</a>
+        <a class="btn ghost" href="#">How It Works</a>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="square">
+        <div class="bolt">⚡</div>
+        <div class="flavor">Peanut Butter<br>Dark Chocolate</div>
+        <div class="marks"><span>100mg caffeine</span><span>10g protein</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="numbers">
+    <div><b>100mg</b>clean caffeine</div>
+    <div><b>10g</b>plant protein</div>
+    <div><b>0</b>crash</div>
+  </div>
+</section>
+
+<button class="switcher" onclick="document.body.classList.toggle('v-b');this.textContent=document.body.classList.contains('v-b')?'View A: Outcome':'View B: Caffeine'">View B: Caffeine</button>
+
+</body>
+</html>
