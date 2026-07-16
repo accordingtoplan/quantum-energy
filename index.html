@@ -44,12 +44,13 @@
   .hero-card{
     position:relative;border-radius:var(--radius);overflow:hidden;
     min-height:min(88svh,780px);
-    background:var(--card) url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/9901ca29-563b-42f7-8743-6242cdd3280c-1784191130452.jpg') center/cover no-repeat;
+    background:var(--card) url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/ef7d73df-1ce5-4287-8134-cb0ae4feaa10-1784191855783.jpg') center/cover no-repeat;
   }
   .hero-nav{
     position:absolute;inset:0 0 auto 0;z-index:5;
     display:flex;align-items:center;justify-content:space-between;
-    padding:26px 34px;
+    padding:26px 34px;color:#FFFDF6;
+    text-shadow:0 1px 14px rgba(20,18,12,.25);
   }
   .hero-nav .links{display:flex;gap:26px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
   .hero-nav .links.right{justify-content:flex-end}
@@ -62,6 +63,7 @@
 
   .hero-caption{
     position:absolute;right:38px;bottom:34px;text-align:right;max-width:24ch;
+    color:#FFFDF6;text-shadow:0 1px 16px rgba(20,18,12,.3);
   }
   .hero-caption h1{
     font-weight:400;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.01em;line-height:1.25;
@@ -100,6 +102,30 @@
   .tile .desc{font-size:11px;color:var(--ink-soft);margin-top:5px;text-transform:lowercase;letter-spacing:.02em}
   .tile .stars{font-size:10px;letter-spacing:.18em;color:var(--ink);margin-bottom:7px}
 
+  /* focus modules */
+  .focus{
+    position:relative;margin-top:var(--gutter);border-radius:var(--radius);overflow:hidden;
+    min-height:min(80svh,700px);
+    background-size:cover;background-position:center;
+    display:flex;align-items:flex-end;
+  }
+  .focus .cap{
+    padding:clamp(30px,4vw,54px);color:#FFFDF6;text-shadow:0 1px 16px rgba(20,18,12,.35);
+    max-width:34ch;
+  }
+  .focus .cap h2{font-weight:500;font-size:clamp(22px,2.6vw,34px);text-transform:lowercase;letter-spacing:-.01em;line-height:1.2;margin-bottom:14px}
+  .focus .cap p{font-size:12.5px;font-weight:300;line-height:1.7;margin-bottom:20px;text-transform:lowercase}
+  .duo{display:grid;gap:var(--gutter);margin-top:var(--gutter);grid-template-columns:1fr}
+  @media(min-width:760px){.duo{grid-template-columns:1fr 1fr}}
+  .duo .cell{
+    position:relative;border-radius:var(--radius);overflow:hidden;min-height:520px;
+    background-size:cover;background-position:center;display:flex;align-items:flex-end;
+  }
+  .duo .cell span{
+    margin:26px 30px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:lowercase;
+    color:#FFFDF6;text-shadow:0 1px 12px rgba(20,18,12,.4);
+  }
+
   /* statement module */
   .statement{
     margin-top:var(--gutter);border-radius:var(--radius);
@@ -129,7 +155,7 @@
   .split .panel p b{font-weight:500;color:var(--ink)}
   .split .photo{
     border-radius:var(--radius);min-height:460px;
-    background:var(--card) url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/99debb49-8d88-463b-9b80-fc582b84f55d-1784191266980.jpg') center/cover no-repeat;
+    background:var(--card) url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/ca3e5308-68ad-4b57-8b8b-39f3465ddada-1784191962317.jpg') center/cover no-repeat;
   }
 
   /* footer */
@@ -190,6 +216,17 @@
     <div class="meta"><span>salted pb crunch</span><span>$19.95</span></div>
     <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
   </div>
+</section>
+
+<section class="focus" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/c3d1e579-3f2b-41e6-9b97-631d98555084-1784191888697.jpg')">
+  <div class="cap">
+    <h2>built for summer. and the 2pm slump.</h2>
+    <p>a drink melts, spills and never makes it through security. a bar wins everywhere: the beach bag, the gym bag, the glovebox.</p>
+    <a class="pill" href="#">find your moment</a>
+  </div>
+</section>
+
+<section class="tiles">
   <div class="tile">
     <div class="big">caramel almond<br>sea salt</div>
     <div class="shot"><img src="https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/5b458b1a-6507-4df3-aef7-cf3b01d531ec-1784191198392.jpg" alt="quantum caramel almond sea salt"></div>
@@ -213,6 +250,11 @@
     <div class="meta"><span>curated packs</span><span>$27.95</span></div>
     <div class="desc">three flavors each, four of each bar</div>
   </div>
+</section>
+
+<section class="duo">
+  <div class="cell" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/e3f4f9ee-1a88-45ba-a80f-6eb10f0e193b-1784191940046.jpg')"><span>on the trail</span></div>
+  <div class="cell" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/9c153407-0fd7-49c6-91ed-b317d0d5da78-1784191913764.jpg')"><span>real food inside</span></div>
 </section>
 
 <section class="statement">
