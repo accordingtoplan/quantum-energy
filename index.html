@@ -11,12 +11,12 @@
     --yellow:#FFD400;
     --ink:#26241F;
     --ink-soft:#6E6A61;
-    --page:#EFEEE9;
-    --card:#E8E6DF;
-    --card-light:#F5F4F0;
-    --line:#DCD9D1;
-    --radius:10px;
-    --gutter:10px;
+    --page:#FFD400;
+    --card:#F5F3ED;
+    --card-light:#FCFBF7;
+    --line:#E3E0D7;
+    --radius:12px;
+    --gutter:22px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -32,19 +32,19 @@
     padding:9px 20px;border:1px solid currentColor;border-radius:999px;
     transition:background .25s ease,color .25s ease;
   }
-  .pill:hover{background:var(--ink);color:var(--page);border-color:var(--ink)}
+  .pill:hover{background:var(--ink);color:var(--card);border-color:var(--ink)}
 
   /* announcement */
   .bar{
     font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
-    text-align:center;padding:12px 16px;color:var(--ink-soft);
+    text-align:center;padding:16px;color:var(--ink);
   }
 
   /* hero card with overlaid nav */
   .hero-card{
     position:relative;border-radius:var(--radius);overflow:hidden;
     min-height:min(88svh,780px);
-    background:#E5E2DA url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/26852392-9b33-4447-8f8c-ae1993cb15a5-1784155307840.jpg') center/cover no-repeat;
+    background:var(--card) url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/26852392-9b33-4447-8f8c-ae1993cb15a5-1784155307840.jpg') center/cover no-repeat;
   }
   .hero-nav{
     position:absolute;inset:0 0 auto 0;z-index:5;
@@ -104,7 +104,7 @@
   .statement{
     margin-top:var(--gutter);border-radius:var(--radius);
     background:var(--card);
-    padding:clamp(60px,9vw,120px) 24px;text-align:center;
+    padding:clamp(80px,11vw,150px) 24px;text-align:center;
   }
   .statement h2{
     font-weight:500;font-size:clamp(18px,1.9vw,24px);text-transform:lowercase;letter-spacing:-.01em;
@@ -129,7 +129,7 @@
   .split .panel p b{font-weight:500;color:var(--ink)}
   .split .photo{
     border-radius:var(--radius);min-height:460px;
-    background:#E5E2DA url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/26852392-9b33-4447-8f8c-ae1993cb15a5-1784155307840.jpg') center/cover no-repeat;
+    background:var(--card) url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/26852392-9b33-4447-8f8c-ae1993cb15a5-1784155307840.jpg') center/cover no-repeat;
   }
 
   /* footer */
@@ -157,7 +157,7 @@
 
 <section class="hero-card">
   <div class="hero-nav">
-    <div class="links left"><a href="#">shop</a><a href="#">about</a><a href="#">mission</a></div>
+    <div class="links left"><a href="#">shop</a><a href="#">about</a><a href="#">store locator</a></div>
     <div class="wordmark">quantum</div>
     <div class="links right"><a href="#">search</a><a href="#">account</a><a href="#">cart (0)</a></div>
   </div>
@@ -170,25 +170,48 @@
 <section class="tiles">
   <div class="tile">
     <div class="big">peanut butter<br>dark chocolate</div>
-    <div class="new">new</div>
+    <div class="new">best seller</div>
     <div class="shot"><img src="https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/26852392-9b33-4447-8f8c-ae1993cb15a5-1784155307840.jpg" alt="quantum peanut butter dark chocolate"></div>
     <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (128)</div>
     <div class="meta"><span>pb dark chocolate</span><span>$19.95</span></div>
     <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
   </div>
   <div class="tile">
-    <div class="big">the 2pm<br>slump</div>
-    <div class="shot"><div class="ph">lifestyle shot to come</div></div>
-    <div class="stars">&nbsp;</div>
-    <div class="meta"><span>your moment</span><span></span></div>
-    <div class="desc">a bar wins where a drink fails</div>
+    <div class="big">dark chocolate<br>himalayan salt</div>
+    <div class="shot"><div class="ph">packshot to come</div></div>
+    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (94)</div>
+    <div class="meta"><span>dark choc salt</span><span>$19.95</span></div>
+    <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
   </div>
   <div class="tile">
-    <div class="big">sustained<br>by design</div>
-    <div class="shot"><div class="ph">energy curve module, block 3</div></div>
-    <div class="stars">&nbsp;</div>
-    <div class="meta"><span>how it works</span><span></span></div>
-    <div class="desc">no spike, no crash, by design</div>
+    <div class="big">salted peanut<br>butter crunch</div>
+    <div class="shot"><div class="ph">packshot to come</div></div>
+    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (87)</div>
+    <div class="meta"><span>salted pb crunch</span><span>$19.95</span></div>
+    <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
+  </div>
+  <div class="tile">
+    <div class="big">caramel almond<br>sea salt</div>
+    <div class="shot"><div class="ph">packshot to come</div></div>
+    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (76)</div>
+    <div class="meta"><span>caramel almond</span><span>$19.95</span></div>
+    <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
+  </div>
+  <div class="tile">
+    <div class="big">the variety<br>pack</div>
+    <div class="new">all six flavors</div>
+    <div class="shot"><div class="ph">packshot to come</div></div>
+    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (211)</div>
+    <div class="meta"><span>variety 12-pack</span><span>$27.95</span></div>
+    <div class="desc">all six flavors in one box</div>
+  </div>
+  <div class="tile">
+    <div class="big">chocolate fix<br>+ sweet salty</div>
+    <div class="new">12-pack</div>
+    <div class="shot"><div class="ph">packshot to come</div></div>
+    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (63)</div>
+    <div class="meta"><span>curated packs</span><span>$27.95</span></div>
+    <div class="desc">three flavors each, four of each bar</div>
   </div>
 </section>
 
