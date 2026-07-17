@@ -52,14 +52,19 @@
     background:var(--card) url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/ef7d73df-1ce5-4287-8134-cb0ae4feaa10-1784191855783.jpg') center/cover no-repeat;
   }
   .site-nav{
-    position:sticky;top:10px;z-index:60;
+    position:absolute;inset:0 0 auto 0;z-index:60;
     display:flex;align-items:center;justify-content:space-between;
-    padding:18px 30px;margin:0 0 10px;
-    background:rgba(230,228,221,.85);backdrop-filter:blur(14px);
-    border-radius:999px;color:var(--ink);
-    transition:transform .45s cubic-bezier(.4,0,.2,1),opacity .45s ease;
+    padding:22px 34px;
+    color:#FFFDF6;text-shadow:0 1px 14px rgba(20,18,12,.25);
+    transition:transform .5s cubic-bezier(.4,0,.2,1),background .3s ease,color .3s ease;
   }
-  .site-nav.hidden{transform:translateY(-130%);opacity:0}
+  .site-nav.fixed{
+    position:fixed;top:0;left:0;right:0;
+    background:var(--page);color:var(--ink);text-shadow:none;
+    padding:16px 34px;
+    transform:translateY(0);
+  }
+  .site-nav.fixed.hidden{transform:translateY(-110%)}
   .site-nav .links{display:flex;gap:30px;font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;flex:1}
   .site-nav .links.right{justify-content:flex-end}
   .site-nav .links a{position:relative;padding-bottom:3px}
@@ -117,6 +122,16 @@
     position:absolute;left:0;right:0;bottom:0;z-index:2;padding:44px 26px 20px;
     background:linear-gradient(transparent, rgba(245,243,237,.94) 55%);
   }
+  .tile.fill .buy{
+    position:absolute;left:50%;bottom:112px;z-index:3;
+    transform:translate(-50%,10px);opacity:0;
+    background:var(--card-light);color:var(--ink);
+    font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    padding:12px 24px;border-radius:999px;white-space:nowrap;
+    box-shadow:0 8px 24px rgba(38,36,31,.14);
+    transition:opacity .35s ease,transform .35s cubic-bezier(.4,0,.2,1);
+  }
+  .tile.fill:hover .buy{opacity:1;transform:translate(-50%,0)}
   .tile .shot img{max-width:74%;max-height:250px;border-radius:6px;
     filter:drop-shadow(0 18px 22px rgba(38,36,31,.18));}
   .tile .shot .ph{
@@ -208,13 +223,12 @@
 
 <a class="bar" href="#">free us shipping on orders over $35</a>
 
-<nav class="site-nav">
-  <div class="links left"><a href="#">shop</a><a href="#">about</a><a href="#">store locator</a></div>
-  <div class="wordmark">quantum</div>
-  <div class="links right"><a href="#">search</a><a href="#">account</a><a href="#">cart (0)</a></div>
-</nav>
-
 <section class="hero-card">
+  <nav class="site-nav">
+    <div class="links left"><a href="#">shop</a><a href="#">about</a><a href="#">store locator</a></div>
+    <div class="wordmark">quantum</div>
+    <div class="links right"><a href="#">search</a><a href="#">account</a><a href="#">cart (0)</a></div>
+  </nav>
   <div class="hero-caption">
     <h1><b>real energy</b> for days.</h1>
     <a class="pill" href="#">shop the bar</a>
@@ -226,6 +240,7 @@
     <div class="bg" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/4f1087c1-d92c-4283-bf6f-d5a653aa41ff-1784191912203.jpg')"></div>
     <div class="bg-hover" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/38319881-cdf3-45c6-a02e-500b66343fa6-1784297603916.jpg')"></div>
     <div class="top"><div class="big">peanut butter<br>dark chocolate</div><div class="new">best seller</div></div>
+    <a class="buy" href="#">buy pb dark chocolate, $19.95</a>
     <div class="bottom">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (128)</div>
       <div class="meta"><span>pb dark chocolate</span><span>$19.95</span></div>
@@ -236,6 +251,7 @@
     <div class="bg" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/d6b031a7-8394-4736-a2d2-1e7ef2762377-1784191153162.jpg')"></div>
     <div class="bg-hover" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/ef312429-b402-4021-851c-ac2aed56c398-1784297626084.jpg')"></div>
     <div class="top"><div class="big">dark chocolate<br>himalayan salt</div></div>
+    <a class="buy" href="#">buy dark choc salt, $19.95</a>
     <div class="bottom">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (94)</div>
       <div class="meta"><span>dark choc salt</span><span>$19.95</span></div>
@@ -246,6 +262,7 @@
     <div class="bg" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/1aa6ea51-6dfd-4072-b351-594056f6d473-1784191176094.jpg')"></div>
     <div class="bg-hover" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/904ea52f-8c7b-4457-9515-d1af202f2d90-1784297648799.jpg')"></div>
     <div class="top"><div class="big">salted peanut<br>butter crunch</div></div>
+    <a class="buy" href="#">buy salted pb crunch, $19.95</a>
     <div class="bottom">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (87)</div>
       <div class="meta"><span>salted pb crunch</span><span>$19.95</span></div>
@@ -332,10 +349,17 @@
 
 <script>
 (function(){
-  var nav=document.querySelector('.site-nav');var last=0;
+  var nav=document.querySelector('.site-nav');
+  var hero=document.querySelector('.hero-card');
+  var last=0;
   addEventListener('scroll',function(){
-    var y=scrollY;
-    if(y>140&&y>last){nav.classList.add('hidden')}else{nav.classList.remove('hidden')}
+    var y=scrollY, heroH=hero.offsetHeight;
+    if(y>heroH*0.6){
+      nav.classList.add('fixed');
+      if(y>last){nav.classList.add('hidden')}else{nav.classList.remove('hidden')}
+    }else{
+      nav.classList.remove('fixed');nav.classList.remove('hidden');
+    }
     last=y;
   },{passive:true});
 })();
