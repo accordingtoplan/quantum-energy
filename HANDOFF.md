@@ -16,7 +16,7 @@ A web prototype (homepage + one PDP) to convince Quantum Energy Square (client c
 - Energy curve: scroll-driven (curve draws on scroll, crash line falls, Quantum line holds). Signature module, shared between homepage and PDP.
 - Moment selector: interactive tabs. Pricing: placeholders until Katie Lee.
 - Hero: static image for v1. Product cutout still a placeholder graphic, needs real packshot.
-- Headline locked (Frederik, Jul 15): "Real energy for days and nights." Switcher removed.
+- Claim locked (Frederik, Jul 16): "real energy for days." Supersedes "real energy for days and nights."
 - Never use em-dashes in any copy. NEVER. Applies to all files, commits, and UI text.
 
 ## Deploy protocol (per Frederik)
