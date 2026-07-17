@@ -109,19 +109,22 @@
   .tile .shot{
     flex:1;display:flex;align-items:center;justify-content:center;padding:26px 0;
   }
-  .tile.swap{overflow:hidden}
-  .tile.swap .bg-hover{
-    position:absolute;inset:0;z-index:1;
+  .tile.swap{overflow:hidden;padding:0}
+  .tile.swap .bg,.tile.swap .bg-hover{
+    position:absolute;inset:0;
     background-size:cover;background-position:center;
-    opacity:0;transition:opacity .45s ease;
   }
+  .tile.swap .bg{z-index:0}
+  .tile.swap .bg-hover{z-index:1;opacity:0;transition:opacity .45s ease}
   .tile.swap:hover .bg-hover{opacity:1}
-  .tile.swap .big{position:relative;z-index:2}
+  .tile.swap .big{position:absolute;top:26px;left:26px;z-index:2}
   .tile.swap .new{z-index:2}
-  .tile.swap .shot,.tile.swap .stars,.tile.swap .meta,.tile.swap .desc{
+  .tile.swap .bottom{
+    position:absolute;left:0;right:0;bottom:0;z-index:2;padding:44px 26px 20px;
+    background:linear-gradient(transparent, rgba(245,243,237,.94) 55%);
     transition:opacity .3s ease;
   }
-  .tile.swap:hover .shot,.tile.swap:hover .stars,.tile.swap:hover .meta,.tile.swap:hover .desc{opacity:0}
+  .tile.swap:hover .bottom{opacity:0}
   .tile.swap .buy{
     position:absolute;left:22px;right:22px;bottom:22px;z-index:3;
     text-align:center;
@@ -238,31 +241,37 @@
 
 <section class="tiles">
   <div class="tile swap">
+    <div class="bg" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/4f1087c1-d92c-4283-bf6f-d5a653aa41ff-1784191912203.jpg')"></div>
     <div class="bg-hover" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/38319881-cdf3-45c6-a02e-500b66343fa6-1784297603916.jpg')"></div>
     <div class="big">peanut butter<br>dark chocolate</div>
     <div class="new">best seller</div>
-    <div class="shot"><img src="https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/4f1087c1-d92c-4283-bf6f-d5a653aa41ff-1784191912203.jpg" alt="quantum peanut butter dark chocolate"></div>
-    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (128)</div>
-    <div class="meta"><span>pb dark chocolate</span><span>$19.95</span></div>
-    <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
+        <div class="bottom">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (128)</div>
+      <div class="meta"><span>pb dark chocolate</span><span>$19.95</span></div>
+      <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
+    </div>
     <a class="buy" href="#">buy pb dark chocolate - $19.95</a>
   </div>
   <div class="tile swap">
+    <div class="bg" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/d6b031a7-8394-4736-a2d2-1e7ef2762377-1784191153162.jpg')"></div>
     <div class="bg-hover" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/ef312429-b402-4021-851c-ac2aed56c398-1784297626084.jpg')"></div>
     <div class="big">dark chocolate<br>himalayan salt</div>
-    <div class="shot"><img src="https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/d6b031a7-8394-4736-a2d2-1e7ef2762377-1784191153162.jpg" alt="quantum dark chocolate himalayan salt"></div>
-    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (94)</div>
-    <div class="meta"><span>dark choc salt</span><span>$19.95</span></div>
-    <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
+        <div class="bottom">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (94)</div>
+      <div class="meta"><span>dark choc salt</span><span>$19.95</span></div>
+      <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
+    </div>
     <a class="buy" href="#">buy dark choc salt - $19.95</a>
   </div>
   <div class="tile swap">
+    <div class="bg" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/1aa6ea51-6dfd-4072-b351-594056f6d473-1784191176094.jpg')"></div>
     <div class="bg-hover" style="background-image:url('https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/904ea52f-8c7b-4457-9515-d1af202f2d90-1784297648799.jpg')"></div>
     <div class="big">salted peanut<br>butter crunch</div>
-    <div class="shot"><img src="https://images.portal.soot.com/generated/8382b0a5-110a-4354-98a3-7f238e8f13b6/1aa6ea51-6dfd-4072-b351-594056f6d473-1784191176094.jpg" alt="quantum salted peanut butter crunch"></div>
-    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (87)</div>
-    <div class="meta"><span>salted pb crunch</span><span>$19.95</span></div>
-    <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
+        <div class="bottom">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (87)</div>
+      <div class="meta"><span>salted pb crunch</span><span>$19.95</span></div>
+      <div class="desc">100mg caffeine, 10g plant protein, 8-pack</div>
+    </div>
     <a class="buy" href="#">buy salted pb crunch - $19.95</a>
   </div>
 </section>
