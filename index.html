@@ -55,12 +55,12 @@
     position:absolute;inset:0 0 auto 0;z-index:60;
     display:flex;align-items:center;justify-content:space-between;
     padding:22px 34px;
-    color:#FFFDF6;text-shadow:0 1px 14px rgba(20,18,12,.25);
+    color:var(--ink);
     transition:transform .5s cubic-bezier(.4,0,.2,1),background .3s ease,color .3s ease;
   }
   .site-nav.fixed{
     position:fixed;top:0;left:0;right:0;
-    background:var(--page);color:var(--ink);text-shadow:none;
+    background:var(--page);color:var(--ink);
     padding:16px 34px;
     transform:translateY(0);
   }
@@ -82,7 +82,7 @@
 
   .hero-caption{
     position:absolute;right:38px;bottom:34px;text-align:right;max-width:24ch;
-    color:#FFFDF6;text-shadow:0 1px 16px rgba(20,18,12,.3);
+    color:var(--ink);
   }
   .hero-caption h1{
     font-weight:400;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.01em;line-height:1.25;
