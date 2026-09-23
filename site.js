@@ -163,3 +163,21 @@
     });
   });
 })();
+
+(function(){
+  /* subscribe reprise: jump to the plan toggle with subscribe selected */
+  var go=document.querySelector('.subscribe .add'); if(!go) return;
+  go.addEventListener('click',function(e){
+    e.preventDefault();
+    var plans=document.querySelectorAll('.plan label');
+    plans.forEach(function(l,i){l.classList.toggle('on',i===1); var r=l.querySelector('input'); if(r) r.checked=(i===1)});
+    var panel=document.querySelector('.buy-panel');
+    window.scrollTo({top:panel.offsetTop-80,behavior:'smooth'});
+  });
+})();
+
+(function(){
+  /* faq: one open at a time */
+  var rows=document.querySelectorAll('.faq details'); if(!rows.length) return;
+  rows.forEach(function(d){d.addEventListener('toggle',function(){if(d.open) rows.forEach(function(o){if(o!==d) o.open=false})})});
+})();
