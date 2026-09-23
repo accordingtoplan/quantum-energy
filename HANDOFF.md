@@ -28,6 +28,6 @@ GitHub REST API, not git CLI. Verify connection, check Pages status (enable on d
 
 ## Immediate next steps
 1. Hover images for row 2 (caramel almond, variety pack, curated packs): currently placeholders borrowed from the page.
-2. Hero packshot: the Sep 23 approved final (light studio pack) was tried and rolled back by Frederik the same day; the lifestyle hero stays until a new direction is set.
+2. Hero: the approved studio packshot is in with ink nav and caption (Frederik, Sep 23). A real cutout or a darker treatment is still open.
 3. PDP build per docs/Quantum_PDP_Spec_v1.md, reusing the curve module.
 4. Blocks 5 to 9 on the homepage (retail spotlight, moments strip, taste, social proof, subscribe) remain unbuilt.
