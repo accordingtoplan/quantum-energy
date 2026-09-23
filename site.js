@@ -181,3 +181,23 @@
   var rows=document.querySelectorAll('.faq details'); if(!rows.length) return;
   rows.forEach(function(d){d.addEventListener('toggle',function(){if(d.open) rows.forEach(function(o){if(o!==d) o.open=false})})});
 })();
+
+(function(){
+  /* hero slider: slow crossfade, pauses on hover, static under reduced motion */
+  var wrap=document.querySelector('.hero-slides'); if(!wrap) return;
+  var slides=wrap.querySelectorAll('img'), dots=document.querySelectorAll('.hero-dots button');
+  if(slides.length<2) return;
+  var i=0,timer=null,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n){
+    i=(n+slides.length)%slides.length;
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    dots.forEach(function(d,k){d.classList.toggle('on',k===i)});
+  }
+  function start(){ if(reduce||timer) return; timer=setInterval(function(){show(i+1)},5600); }
+  function stop(){ clearInterval(timer); timer=null; }
+  dots.forEach(function(d,k){d.addEventListener('click',function(){show(k);stop();start()})});
+  var hero=wrap.parentNode;
+  hero.addEventListener('mouseenter',stop); hero.addEventListener('mouseleave',start);
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});
+  start();
+})();
