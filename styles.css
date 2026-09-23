@@ -452,3 +452,28 @@
   .panel-box p{font-size:12px;line-height:1.75;text-transform:lowercase;color:var(--ink)}
   .panel-box .certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
   .panel-box .certs span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--ink)}
+
+  /* block 6: moment selector */
+  .moments{margin-top:var(--gutter);background:var(--card);border-radius:var(--radius);padding:clamp(26px,3.5vw,48px);overflow:hidden}
+  .moments .head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px 32px;flex-wrap:wrap;margin-bottom:clamp(20px,2.6vw,32px)}
+  .moments .head h2{font-weight:500;font-size:clamp(22px,2.6vw,34px);text-transform:lowercase;letter-spacing:-.01em;line-height:1.15}
+  .moments .head p{font-size:12.5px;font-weight:300;line-height:1.7;color:var(--ink-soft);max-width:36ch;text-transform:lowercase}
+  .moment-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -4px;padding:0 4px 6px}
+  .moment-tabs::-webkit-scrollbar{display:none}
+  .moment-tabs button{
+    flex:none;cursor:pointer;font-family:inherit;font-size:11px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);
+    background:var(--card-light);border:1px solid var(--line);border-radius:999px;padding:11px 18px;
+    transition:border-color .25s ease,background .25s ease,color .25s ease;
+  }
+  .moment-tabs button.on{background:var(--ink);color:var(--page);border-color:var(--ink)}
+  .moment-stage{display:grid;gap:var(--gutter);grid-template-columns:1fr;margin-top:clamp(18px,2.4vw,28px)}
+  @media(min-width:760px){.moment-stage{grid-template-columns:1.25fr 1fr;align-items:stretch}}
+  .moment-stage .pic{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/2;background:var(--card-light)}
+  .moment-stage .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s ease,transform 1.2s cubic-bezier(.2,.6,.2,1)}
+  .moment-stage .pic img.fade{opacity:0;transform:scale(1.03)}
+  .moment-stage .copy{display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:6px 0}
+  .moment-stage .copy .when{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .moment-stage .copy h3{font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:clamp(26px,3vw,42px);letter-spacing:-.03em;line-height:1;text-transform:lowercase}
+  .moment-stage .copy p{font-size:13px;font-weight:300;line-height:1.7;color:var(--ink-soft);text-transform:lowercase;max-width:34ch;min-height:3.4em}
+  .moment-stage .copy .same{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border-top:1px solid var(--line);padding-top:14px}
+  .moment-stage .copy .same i{font-style:normal;color:var(--yellow)}

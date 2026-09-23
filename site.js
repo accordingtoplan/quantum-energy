@@ -142,3 +142,22 @@
     });
   });
 })();
+
+(function(){
+  /* moment selector tabs */
+  var wrap=document.querySelector('.moments'); if(!wrap) return;
+  var tabs=wrap.querySelectorAll('.moment-tabs button');
+  var img=wrap.querySelector('.pic img'), when=wrap.querySelector('.when'), h3=wrap.querySelector('.copy h3'), p=wrap.querySelector('.copy p');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      if(t.classList.contains('on')) return;
+      tabs.forEach(function(x){x.classList.toggle('on',x===t)});
+      img.classList.add('fade');
+      setTimeout(function(){
+        img.setAttribute('src',t.dataset.img);
+        when.textContent=t.dataset.when; h3.textContent=t.dataset.title; p.textContent=t.dataset.line;
+        img.onload=function(){img.classList.remove('fade')};
+      },260);
+    });
+  });
+})();
