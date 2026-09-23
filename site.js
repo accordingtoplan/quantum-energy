@@ -110,6 +110,8 @@
       thumbs[1].dataset.full=c.dataset.inside; thumbs[1].querySelector('img').src=c.dataset.inside;
       selectThumb(thumbs[0]);
       if(bar) bar.querySelector('.who b').textContent=c.dataset.name;
+      var tn=document.querySelector('.taste .tnotes'), tl=document.querySelector('.taste .notes h4 span');
+      if(tn&&c.dataset.notes){tn.innerHTML=c.dataset.notes; tl.textContent=c.dataset.name}
       document.title='quantum, '+c.dataset.name;
     });
   });
