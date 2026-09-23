@@ -132,3 +132,13 @@
     },{passive:true});
   }
 })();
+
+(function(){
+  /* ingredient flex: one row open at a time */
+  var rows=document.querySelectorAll('.ingredients details'); if(!rows.length) return;
+  rows.forEach(function(d){
+    d.addEventListener('toggle',function(){
+      if(d.open) rows.forEach(function(o){if(o!==d) o.open=false});
+    });
+  });
+})();
