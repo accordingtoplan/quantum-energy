@@ -259,7 +259,7 @@
   .curve-axis span.on{color:var(--ink-soft)}
   .curve-nums{
     display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter);
-    border-top:1px solid var(--line);padding-top:clamp(18px,2.4vw,30px);
+    padding-top:clamp(10px,1.6vw,20px);
   }
   .curve-nums div{transition:opacity .6s ease,transform .6s cubic-bezier(.4,0,.2,1)}
   .curve.js .curve-nums div{opacity:0;transform:translateY(12px)}
@@ -268,7 +268,7 @@
     display:block;font-family:'Archivo Expanded',sans-serif;font-weight:700;
     font-size:clamp(26px,4.6vw,64px);letter-spacing:-.04em;line-height:1;
   }
-  .curve-nums b i{font-style:normal;color:var(--yellow)}
+  .curve-nums b i{font-style:normal}
   .curve-nums span{display:block;margin-top:8px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
   @media(max-width:759px){
     .curve{min-height:220svh}
@@ -359,9 +359,9 @@
   .buy-panel .outcome em{font-style:normal;background:linear-gradient(transparent 68%, var(--accent) 68%, var(--accent) 96%, transparent 96%);padding:0 .1em;transition:background .5s ease}
   .buy-panel .rating{display:flex;gap:10px;align-items:baseline;font-size:11px;letter-spacing:.06em;text-transform:lowercase;color:var(--ink-soft);margin-top:10px}
   .buy-panel .rating b{letter-spacing:.18em;color:var(--ink);font-weight:400}
-  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:6px 0}
   .facts b{display:block;font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:clamp(18px,1.8vw,24px);letter-spacing:-.03em;line-height:1}
-  .facts b i{font-style:normal;color:var(--accent);transition:color .5s ease}
+  .facts b i{font-style:normal}
   .facts span{display:block;margin-top:6px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
   .flavors h4,.plan h4,.qty h4{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
   .flavors h4 span{color:var(--ink);text-transform:lowercase;letter-spacing:.02em;font-size:11px;margin-left:8px}
@@ -398,7 +398,7 @@
   .add span{white-space:nowrap}
   @media(max-width:430px){.add{padding:0 18px;font-size:11px}}
   .buy-panel .store{font-size:11px;letter-spacing:.06em;text-transform:lowercase;color:var(--ink-soft);text-align:center;text-decoration:underline;text-underline-offset:3px}
-  .badges{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding-top:18px;border-top:1px solid var(--line)}
+  .badges{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding-top:6px}
   .badges span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:7px;vertical-align:1px;transition:background .5s ease}
   .buy-panel .desc{font-size:12.5px;font-weight:300;line-height:1.75;color:var(--ink-soft);text-transform:lowercase;max-width:44ch}
   .buy-panel .desc b{font-weight:500;color:var(--ink)}
@@ -425,7 +425,7 @@
     min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:30px;
   }
   .nums-grid b{font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:clamp(56px,7vw,110px);letter-spacing:-.05em;line-height:.9}
-  .nums-grid b i{font-style:normal;color:var(--yellow)}
+  .nums-grid b i{font-style:normal}
   .nums-grid p{font-size:12.5px;font-weight:300;line-height:1.7;color:var(--ink-soft);text-transform:lowercase;max-width:30ch}
   .nums-grid p strong{font-weight:500;color:var(--ink)}
 
@@ -491,8 +491,8 @@
   .moment-stage .copy .when{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
   .moment-stage .copy h3{font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:clamp(26px,3vw,42px);letter-spacing:-.03em;line-height:1;text-transform:lowercase}
   .moment-stage .copy p{font-size:13px;font-weight:300;line-height:1.7;color:var(--ink-soft);text-transform:lowercase;max-width:34ch;min-height:3.4em}
-  .moment-stage .copy .same{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border-top:1px solid var(--line);padding-top:14px}
-  .moment-stage .copy .same i{font-style:normal;color:var(--yellow)}
+  .moment-stage .copy .same{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding-top:6px}
+  .moment-stage .copy .same i{font-style:normal}
 
   /* block 8: comparison with wit */
   .compare{margin-top:var(--gutter);background:var(--card);border-radius:var(--radius);padding:clamp(26px,3.5vw,48px)}
@@ -522,7 +522,7 @@
   .proof .cell{background:var(--card);border-radius:var(--radius);padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:260px}
   .proof .stat{grid-column:span 2}
   .proof .stat b{font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:clamp(48px,6vw,96px);letter-spacing:-.05em;line-height:.9}
-  .proof .stat b i{font-style:normal;color:var(--yellow)}
+  .proof .stat b i{font-style:normal}
   .proof .stat span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
   .proof .stat .stars{font-size:14px;letter-spacing:.2em;color:var(--ink)}
   .proof .quote{grid-column:span 2}
@@ -544,11 +544,11 @@
   .taste .panel h2 em{font-style:normal;background:linear-gradient(transparent 68%, var(--yellow) 68%, var(--yellow) 96%, transparent 96%);padding:0 .1em}
   .taste .panel .story{font-size:13px;font-weight:300;line-height:1.75;color:var(--ink-soft);text-transform:lowercase;max-width:40ch;margin-top:16px}
   .taste .panel .story b{font-weight:500;color:var(--ink)}
-  .taste .notes{border-top:1px solid var(--line);padding-top:22px}
+  .taste .notes{padding-top:8px}
   .taste .notes h4{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
   .taste .notes h4 span{color:var(--ink);text-transform:lowercase;letter-spacing:.02em;font-size:11px;margin-left:8px}
   .taste .notes p{font-family:'Archivo Expanded',sans-serif;font-weight:600;font-size:clamp(16px,1.7vw,22px);letter-spacing:-.02em;line-height:1.3;text-transform:lowercase}
-  .taste .notes p i{font-style:normal;color:var(--yellow)}
+  .taste .notes p i{font-style:normal}
   .taste .strip{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
   .taste .strip div{border-radius:8px;overflow:hidden;aspect-ratio:3/2;background:var(--card-light)}
   .taste .strip img{width:100%;height:100%;object-fit:cover;display:block}
@@ -561,7 +561,7 @@
   .subscribe h2 em{font-style:normal;background:linear-gradient(transparent 68%, var(--yellow) 68%, var(--yellow) 96%, transparent 96%);padding:0 .1em}
   .subscribe .terms{display:grid;grid-template-columns:repeat(3,auto);gap:10px 26px;justify-content:start;margin-top:22px;font-size:11px;letter-spacing:.06em;text-transform:lowercase;color:var(--ink-soft)}
   .subscribe .terms b{display:block;font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:clamp(18px,1.8vw,24px);letter-spacing:-.03em;color:var(--ink);margin-bottom:4px}
-  .subscribe .terms b i{font-style:normal;color:var(--yellow)}
+  .subscribe .terms b i{font-style:normal}
   .subscribe .act{display:flex;flex-direction:column;gap:12px;align-items:stretch}
   .subscribe .act .add{padding:20px 26px}
   .subscribe .act small{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);text-align:center}
