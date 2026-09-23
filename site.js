@@ -75,3 +75,60 @@
   });
   document.addEventListener('click',function(e){if(!e.target.closest('.tile.swap')) closeAll()});
 })();
+
+(function(){
+  /* product page: flavor takeover, gallery, plan toggle, quantity, sticky buy bar */
+  var stage=document.querySelector('.pdp-stage'); if(!stage) return;
+  var chips=stage.querySelectorAll('.chips button');
+  var main=stage.querySelector('.gallery .main img');
+  var thumbs=stage.querySelectorAll('.gallery .thumbs button');
+  var title=stage.querySelector('h1'), outcome=stage.querySelector('.outcome'), desc=stage.querySelector('.desc');
+  var chosen=stage.querySelector('.flavors h4 span');
+  var bar=document.querySelector('.buy-bar');
+
+  function swapMain(src){
+    if(main.getAttribute('src')===src) return;
+    main.classList.add('fade');
+    setTimeout(function(){main.setAttribute('src',src);main.onload=function(){main.classList.remove('fade')}},220);
+  }
+  function selectThumb(btn){
+    for(var i=0;i<thumbs.length;i++) thumbs[i].classList.toggle('on',thumbs[i]===btn);
+    swapMain(btn.dataset.full);
+  }
+  thumbs.forEach(function(t){t.addEventListener('click',function(){selectThumb(t)})});
+
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.classList.toggle('on',x===c)});
+      stage.style.setProperty('--accent',c.dataset.accent);
+      stage.style.setProperty('--tint',c.dataset.tint);
+      title.innerHTML=c.dataset.title;
+      outcome.innerHTML=c.dataset.outcome;
+      desc.innerHTML=c.dataset.desc;
+      chosen.textContent=c.dataset.name;
+      thumbs[0].dataset.full=c.dataset.pack; thumbs[0].querySelector('img').src=c.dataset.pack;
+      thumbs[1].dataset.full=c.dataset.inside; thumbs[1].querySelector('img').src=c.dataset.inside;
+      selectThumb(thumbs[0]);
+      if(bar) bar.querySelector('.who b').textContent=c.dataset.name;
+      document.title='quantum, '+c.dataset.name;
+    });
+  });
+
+  var plans=stage.querySelectorAll('.plan label');
+  plans.forEach(function(l){l.addEventListener('click',function(){plans.forEach(function(x){x.classList.toggle('on',x===l)})})});
+
+  var out=stage.querySelector('.qty-box output');
+  stage.querySelectorAll('.qty-box button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var n=parseInt(out.value||out.textContent,10)+(b.dataset.step==='-'?-1:1);
+      out.textContent=Math.max(1,n);
+    });
+  });
+
+  if(bar){
+    var panel=stage.querySelector('.buy-panel');
+    addEventListener('scroll',function(){
+      bar.classList.toggle('show',panel.getBoundingClientRect().bottom<0);
+    },{passive:true});
+  }
+})();

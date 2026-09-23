@@ -302,3 +302,118 @@
   .foot-grid h4{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
   .foot-grid a{display:block;margin-bottom:8px;text-transform:lowercase;letter-spacing:.04em}
   .foot-grid p{line-height:1.7;max-width:34ch;text-transform:lowercase}
+
+  /* product page */
+  .site-nav.plain{
+    position:sticky;top:0;z-index:60;
+    color:var(--ink);text-shadow:none;background:var(--page);
+    padding:16px 12px;margin-bottom:2px;
+  }
+  .pdp-stage{
+    --accent:var(--yellow);--tint:var(--card);
+    display:grid;gap:var(--gutter);grid-template-columns:1fr;
+  }
+  @media(min-width:900px){.pdp-stage{grid-template-columns:1.15fr 1fr}}
+  .gallery{display:grid;gap:12px;grid-template-rows:auto auto}
+  .gallery .main{
+    position:relative;border-radius:var(--radius);overflow:hidden;
+    background:var(--tint);aspect-ratio:4/5;max-height:min(78svh,760px);
+    transition:background-color .5s ease;
+  }
+  .gallery .main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s ease}
+  .gallery .main img.fade{opacity:0}
+  .gallery .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .gallery .thumbs button{
+    border:0;padding:0;cursor:pointer;border-radius:8px;overflow:hidden;aspect-ratio:1;
+    background:var(--tint);opacity:.55;transition:opacity .25s ease,box-shadow .25s ease;
+  }
+  .gallery .thumbs button img{width:100%;height:100%;object-fit:cover;display:block}
+  .gallery .thumbs button.on{opacity:1;box-shadow:0 0 0 2px var(--accent)}
+  .buy-panel{
+    background:var(--tint);border-radius:var(--radius);
+    padding:clamp(26px,3.4vw,46px);display:flex;flex-direction:column;gap:22px;
+    transition:background-color .5s ease;
+  }
+  .buy-panel .eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .buy-panel h1{
+    font-family:'Archivo Expanded',sans-serif;font-weight:700;text-transform:lowercase;
+    font-size:clamp(28px,3vw,42px);letter-spacing:-.03em;line-height:1;margin-top:8px;
+  }
+  .buy-panel .outcome{font-size:15px;font-weight:400;line-height:1.5;text-transform:lowercase;margin-top:12px}
+  .buy-panel .outcome em{font-style:normal;background:linear-gradient(transparent 68%, var(--accent) 68%, var(--accent) 96%, transparent 96%);padding:0 .1em;transition:background .5s ease}
+  .buy-panel .rating{display:flex;gap:10px;align-items:baseline;font-size:11px;letter-spacing:.06em;text-transform:lowercase;color:var(--ink-soft);margin-top:10px}
+  .buy-panel .rating b{letter-spacing:.18em;color:var(--ink);font-weight:400}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
+  .facts b{display:block;font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:clamp(18px,1.8vw,24px);letter-spacing:-.03em;line-height:1}
+  .facts b i{font-style:normal;color:var(--accent);transition:color .5s ease}
+  .facts span{display:block;margin-top:6px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .flavors h4,.plan h4,.qty h4{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+  .flavors h4 span{color:var(--ink);text-transform:lowercase;letter-spacing:.02em;font-size:11px;margin-left:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips button{
+    display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+    font-family:inherit;font-size:11px;letter-spacing:.04em;text-transform:lowercase;color:var(--ink);
+    background:var(--card-light);border:1px solid var(--line);border-radius:999px;padding:9px 14px 9px 10px;
+    transition:border-color .25s ease,background .25s ease;
+  }
+  .chips button i{width:12px;height:12px;border-radius:50%;background:var(--c);display:inline-block}
+  .chips button.on{border-color:var(--ink);background:#FFFFFF}
+  .plan .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .plan label{
+    display:block;cursor:pointer;border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+    background:var(--card-light);transition:border-color .25s ease,background .25s ease;
+  }
+  .plan label.on{border-color:var(--ink);background:#FFFFFF}
+  .plan label input{display:none}
+  .plan label b{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .plan label span{display:block;font-size:11px;color:var(--ink-soft);margin-top:4px;text-transform:lowercase}
+  .plan label .save{color:var(--ink);background:linear-gradient(transparent 68%, var(--accent) 68%, var(--accent) 96%, transparent 96%);display:inline;padding:0 .1em}
+  .cta-row{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:stretch}
+  .qty-box{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--card-light)}
+  .qty-box button{border:0;background:none;width:40px;height:52px;font-size:16px;cursor:pointer;color:var(--ink);font-family:inherit}
+  .qty-box output{min-width:22px;text-align:center;font-size:13px;font-weight:600}
+  .add{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    background:var(--ink);color:var(--page);border-radius:999px;padding:0 26px;
+    font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    transition:transform .3s cubic-bezier(.4,0,.2,1),filter .2s ease;
+  }
+  .add:hover{filter:brightness(1.15);transform:translateY(-1px)}
+  .add span{white-space:nowrap}
+  @media(max-width:430px){.add{padding:0 18px;font-size:11px}}
+  .buy-panel .store{font-size:11px;letter-spacing:.06em;text-transform:lowercase;color:var(--ink-soft);text-align:center;text-decoration:underline;text-underline-offset:3px}
+  .badges{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding-top:18px;border-top:1px solid var(--line)}
+  .badges span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:7px;vertical-align:1px;transition:background .5s ease}
+  .buy-panel .desc{font-size:12.5px;font-weight:300;line-height:1.75;color:var(--ink-soft);text-transform:lowercase;max-width:44ch}
+  .buy-panel .desc b{font-weight:500;color:var(--ink)}
+
+  /* sticky buy bar, mobile */
+  .buy-bar{
+    position:fixed;left:var(--gutter);right:var(--gutter);bottom:14px;z-index:70;
+    display:none;align-items:center;justify-content:space-between;gap:12px;
+    background:#FFFFFF;border-radius:999px;padding:8px 8px 8px 20px;
+    box-shadow:0 12px 34px rgba(38,36,31,.18);
+    transform:translateY(130%);transition:transform .4s cubic-bezier(.4,0,.2,1);
+  }
+  .buy-bar.show{transform:none}
+  .buy-bar .who{font-size:11px;letter-spacing:.04em;text-transform:lowercase;line-height:1.3}
+  .buy-bar .who b{display:block;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:10px}
+  .buy-bar .add{padding:14px 20px;font-size:11px}
+  @media(max-width:759px){.buy-bar{display:flex}}
+
+  /* the three numbers, repeated */
+  .nums-grid{display:grid;gap:var(--gutter);margin-top:var(--gutter);grid-template-columns:1fr}
+  @media(min-width:760px){.nums-grid{grid-template-columns:repeat(3,1fr)}}
+  .nums-grid .cell{
+    background:var(--card);border-radius:var(--radius);padding:clamp(30px,3.4vw,46px);
+    min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:30px;
+  }
+  .nums-grid b{font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:clamp(56px,7vw,110px);letter-spacing:-.05em;line-height:.9}
+  .nums-grid b i{font-style:normal;color:var(--yellow)}
+  .nums-grid p{font-size:12.5px;font-weight:300;line-height:1.7;color:var(--ink-soft);text-transform:lowercase;max-width:30ch}
+  .nums-grid p strong{font-weight:500;color:var(--ink)}
+
+  /* cross-sell strip */
+  .strip-head{display:flex;justify-content:space-between;align-items:baseline;margin:calc(var(--gutter)*2) 4px 0}
+  .strip-head h3{font-weight:500;font-size:clamp(18px,1.9vw,24px);text-transform:lowercase;letter-spacing:-.01em}
+  .strip-head a{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
